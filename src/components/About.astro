@@ -1,0 +1,57 @@
+---
+import MoreInfo from '@components/MoreInfoButton.astro'
+---
+
+<section 
+	id="about"
+	class="
+	[grid-area:about]
+	bg-[#040404] rounded-lg
+	px-[28px] py-6
+	flex flex-col gap-5
+	sm:px-14 sm:py-9
+	lg:mt-0 xl:w-[100%]
+	shadow-lg shadow-black
+	">
+	<h2 
+		class="
+		text-2xl font-bold
+		sm:text-3xl sm:mb-2
+		lg:mb-5
+		">
+		<span class="text-[var(--brand-color)]">A</span>bout Me
+	</h2>
+
+	<div class="flex flex-col gap-y-4 xl:flex xl:flex-row xl:justify-between xl:gap-x-8 2xl:gap-x-10">	
+	<div class="xl:max-2xl:w-[90%] 2xl:w-[80%]">
+		<h3 
+		class="
+		text-xl font-bold
+		sm:text-2xl
+		">My Life as <span class="text-[var(--brand-color)]">FrontEnd Developer</span></h3>
+		<div 
+			class="
+			text-gray-300/60 px-2 py-3 
+			sm:text-lg sm:px-3 sm:py-4
+			xl:px-4
+			">My journey as a frontend developer began at the start of this year, I immersed myself in technologies such as HTML, CSS, JavaScript, React, Astro, Tailwind, and GitHub.<span class="hidden"> Fueled by a passion for creating engaging and user-friendly web experiences. While pursuing my studies in mechanical engineering. This unique combination of engineering principles and web development skills allows me to approach problems with a structured mindset, enabling me to build efficient and visually appealing applications.</span> </div>
+	</div>
+	<div class="xl:max-2xl:w-[90%] 2xl:w-[80%]">
+		<h3
+		class="
+		text-xl font-bold
+		sm:text-2xl
+		">What Makes Me <span class="text-[var(--brand-color)]">Special?</span></h3>
+		<div 
+			class="
+			text-gray-300/60 px-2 py-3 
+			sm:text-lg sm:px-3 sm:py-4
+			xl:px-4
+			">My resilience and unwavering determination. I believe that challenges are opportunities for growth, and I never shy away from them.<span class="hidden"> My ability to stay organized and maintain a well-structured schedule ensures that I consistently perform at my best in everything I do. This commitment not only helps me balance my studies and development projects but also drives me to continually improve and excel in my career as a web developer.</span></div>
+	</div>
+	</div>
+
+	<MoreInfo href="about">
+		Read More
+	</MoreInfo>
+</section>

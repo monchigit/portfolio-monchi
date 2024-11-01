@@ -1,0 +1,36 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Learning from '@components/Learning.astro';
+import Skills from '@components/Skills.astro';
+import About from '@components/About.astro';
+import ProjectsCard from '@components/ProjectsCard.astro';
+---
+
+<Layout title="My Portfolio - Moises Sanchez. FrontEnd Developer👨🏻‍💻">
+	<div 
+		id="main"
+		class="[grid-area:main] 
+		flex flex-col gap-y-8
+		xl:grid 
+		">
+		<Skills />
+		<ProjectsCard />
+		<Learning />
+		<About />
+	</div>
+</Layout>
+
+<style>
+	@media (min-width: 1240px) {
+		#main {
+			display: grid;
+			grid-column-gap: 20px;
+			grid-template-areas:
+			"projects skills" 
+			"projects learning" 
+			"about about"
+			;
+			grid-auto-columns: 50% 48%;
+		}
+	}
+</style>

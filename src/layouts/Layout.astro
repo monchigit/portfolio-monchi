@@ -1,0 +1,114 @@
+---
+import { Header } from '@components/Header.jsx';
+import Footer from '@components/Footer.astro';
+import AsideCard from '@components/Aside.astro';
+import Contact from '@components/Contact.astro'
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="This is a portfolio with my skills and projects, also with information about me." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/photos/briefcase.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="absolute top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(132,145,224,0.4),rgba(189,119,143,0.3))]">
+		<div id="app" 
+			class="h-[100%] w-screen
+			px-4 pt-6 pb-4
+			flex flex-col
+			gap-y-8
+			text-white
+			box-border
+			sm:px-7 sm:max-xl:pt-9 sm:pb-6
+			lg:w-[98.9vw]
+			">
+			<header 
+				class="header
+				[grid-area:header] flex
+				items-center
+				h-[56px] 
+				sticky top-0 
+				shadow-md shadow-black
+				bg-[#040404]
+				rounded-lg 
+				z-10 
+				px-3 py-4
+				sm:h-[80px] 
+				sm:px-7
+				xl:h-[90px]
+				">
+				<Header client:load />
+			</header>
+			<aside id="aside"
+				class="
+				[grid-area:aside]
+				rounded-lg
+				bg-[#040404]
+				shadow-lg shadow-black
+				lg:sticky lg:top-20 lg:h-[780px]
+				lg:mr-7
+				"
+				>
+				<AsideCard />
+			</aside>
+			<slot />
+			<footer 
+				class="[grid-area:footer] 
+				"
+			>
+				<Contact />
+				<Footer />
+			</footer>
+		</div>
+
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		scroll-behavior: smooth;
+	}
+
+	:root {
+		--brand-color: #f28c18;
+	}
+
+	@media (min-width: 1024px) {
+		#app {
+			display: grid;
+			grid-template-areas: 
+			"header header header"
+			"aside main main"
+			"aside footer footer";
+			grid-template-columns: 400px 1fr;
+			grid-template-rows: auto 1fr auto;
+		}
+	}
+
+
+	@media (min-width: 1970px) {
+		#aside {
+			height: 850px;
+			padding-top: 15px;
+		}
+	}
+
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>

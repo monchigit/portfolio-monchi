@@ -1,0 +1,37 @@
+---
+import AsideIcon from '@components/AsideIcon.astro'
+import GithubIcon from '@icons/Github.astro';
+import EmailIcon from '@icons/Email.astro';
+import LinkedInIcon from '@icons/LinkedIn.astro';
+import TelegramIcon from '@icons/Telegram.astro';
+---
+
+<nav 
+		class="
+		flex items-center justify-start 
+		p-1">
+
+		<AsideIcon href="https://www.linkedin.com/in/moises-sanchez-9b7457336/">
+			<LinkedInIcon 
+				class="size-5 opacity-70 hover:opacity-100 group-hover:scale-110 group-hover:opacity-100 transition-all duration-400 sm:max-lgsize-7" 
+			/>
+		</AsideIcon>
+
+		<AsideIcon href="https://github.com/monchigit">
+			<GithubIcon 
+				class="size-5 opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-400 sm:max-lgsize-7" 
+			/>
+		</AsideIcon>
+
+		<AsideIcon href="mailto:moisesanchezwork@gmail.com?subject=Estamos%20interesados%20en%20contratarte">
+			<EmailIcon 
+				class="size-5 opacity-70 hover:opacity-100 group-hover:scale-110 group-hover:opacity-100 transition-all duration-400 sm:max-lgsize-7" 
+			/>
+		</AsideIcon>
+
+		<AsideIcon href="https://t.me/moisessanchez04">
+			<TelegramIcon 
+				class="size-5 opacity-70 group-hover:scale-110 group-hover:opacity-100 transition-all duration-400 sm:max-lgsize-7" 
+			/>
+		</AsideIcon>
+	</nav>

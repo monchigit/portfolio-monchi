@@ -1,0 +1,53 @@
+---
+import { LEARNINGS } from '@service/learning.js';
+---
+<section 
+    id="#learning"
+    class="
+    flex flex-col
+    px-[28px] py-8 gap-8
+    bg-[#040404]
+    rounded-lg
+    shadow-lg shadow-black
+    sm:px-14 sm:py-11 sm:max-lg:mt-2
+    ">
+    <h2 
+      class="
+      text-2xl font-bold
+      sm:text-3xl
+      "
+    >
+        <span class="text-[var(--brand-color)]">L</span>earning <span class="text-[var(--brand-color)]">P</span>rocess
+    </h2>
+    <ol 
+      class="mx-4 relative border-s border-gray-200 dark:border-[var(--brand-color)]
+      sm:pr-4
+      ">
+    {
+      LEARNINGS.map(learned => (            
+        <li class="mb-6 ms-4 first:mt-1 last:mb-1">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-[var(--brand-color)] dark:bg-[var(--brand-color)]"></div>
+            <time 
+              class="
+              mb-1 text-base font-normal leading-none text-gray-400 dark:text-[var(--brand-color)] opacity-90
+              sm:text-lg sm:pt-2
+              ">{learned.date}</time>
+            <h3 
+              class="pl-2 pt-1 text-lg font-semibold text-gray-900 dark:text-white
+              sm:text-xl sm:pt-2
+              ">{learned.tech}
+            </h3>
+            <p 
+              class="
+              hidden mb-4 text-base font-normal text-gray-500 dark:text-gray-400
+              sm:pl-2 sm:pt-2 sm:flex
+              "
+            >
+              {learned.description}
+            </p>
+        </li>
+      ))
+    }
+
+    </ol>
+</section>

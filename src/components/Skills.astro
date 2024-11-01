@@ -1,0 +1,76 @@
+---
+import SkillItem from '@components/SkillItem.astro'
+import HTMLIcon from '@icons/HTML.astro'
+import CSSIcon from '@icons/CSS.astro'
+import JSIcon from '@icons/JS.astro'
+import ReactIcon from '@icons/React.astro'
+import AstroIcon from '@icons/AstroIcon.astro'
+import GithubIcon from '@icons/Github.astro'
+import TailwindIcon from '@icons/Tailwind.astro'
+---
+
+
+<div 
+	id="skills"
+	class="
+	[grid-area:skills]
+	px-[28px] pt-4 pb-8
+	rounded-lg
+	bg-[#040404]
+	grid grid-rows-3
+	gap-5
+	sm:px-14 sm:pt-6 sm:pb-10
+	shadow-lg shadow-black
+	xl:w-[100%]
+	">
+	<h2 class="
+		flex flex-col justify-center
+		text-2xl font-bold
+		py-2">
+		<span><span class="text-[var(--brand-color)] inline">S</span>kills</span>
+	</h2>
+	<div class=" 
+		rounded-xl
+		bg-[#040404]
+		grid grid-cols-4
+		gap-3
+		justify-center">
+		<SkillItem>
+			<HTMLIcon class="size-8 sm:size-10" />
+			HTML
+		</SkillItem>
+
+		<SkillItem>
+			<CSSIcon class="size-8 sm:size-10" />
+			CSS
+		</SkillItem>
+		<SkillItem>
+			<JSIcon class="size-8 sm:size-10" />
+			JavaScript
+		</SkillItem>
+
+		<SkillItem>
+			<ReactIcon class="size-8 sm:size-10" />
+			React
+		</SkillItem>
+	</div>
+
+	<div class=" 
+		rounded-xl
+		grid grid-cols-3
+		gap-4 px-4
+		justify-between">
+		<SkillItem>
+			<AstroIcon class="size-8" />
+			Astro
+		</SkillItem>
+		<SkillItem>
+			<TailwindIcon class="size-8" />
+			TailwindCSS
+		</SkillItem>
+		<SkillItem>
+			<GithubIcon class="size-8" />
+			GitHub
+		</SkillItem>
+	</div>
+</div>

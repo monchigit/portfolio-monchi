@@ -1,0 +1,106 @@
+---
+import { PROJECTS } from '@service/projectsInfoMain.js';
+import ProjectOption from '@components/ProjectOption.astro';
+import MoreInfoButton from '@components/MoreInfoButton.astro';
+import SourceCodeIcon from '@icons/SourceCode.astro';
+import EyeIcon from '@icons/Eye.astro';
+---
+
+<div
+	id="projects"
+	class="
+	[grid-area:projects]
+	px-[28px] pt-6 pb-8   
+	rounded-lg
+	bg-[#040404]
+	flex flex-col gap-5
+	shadow-lg shadow-black
+	sm:px-14 sm:max-lg:py-10
+	xl:w-[100%] xl:px-14
+	"
+	>
+	<h2 class="
+		flex flex-col justify-center
+		text-2xl font-bold pt-2
+		sm:text-3xl sm:pt-3 
+		">
+		<span><span class="text-[var(--brand-color)] inline">P</span>rojects</span>
+	</h2>
+	<section 
+		class="
+		flex flex-col gap-4
+		sm:gap-8 items-center
+		">
+		{
+			PROJECTS.map(({ title, tags, description, image }) => (
+				<article class="
+					flex flex-col gap-5 py-4 px-4 items-center
+					bg-[#040404]
+					justify-evenly
+					rounded-md
+					shadow-md shadow-black
+					max-w-[620px]
+					">
+					<div class="
+						flex flex-col gap-4 items-center
+						sm:gap-6 sm:px-6
+						">
+						<a href="#"
+							class="
+							flex flex-col justify-center">
+							<img src={image} alt="Hit The Light"
+							 class="
+							 w-48 h-32
+							 rounded-md
+							 shadow-md shadow-black
+							 sm:w-72 sm:h-48
+							 ">
+						</a>
+						<div class="flex flex-col gap-4 justify-center items-start py-1 px-1
+							sm:gap-5
+							">
+							<h3 
+								class="
+								text-lg font-bold self-center
+								sm:text-2xl
+								">{title}</h3>
+							<div class="text-gray-300/60 text-start sm:text-xl">
+								{description}
+							</div>
+							<ul class="flex flex-wrap gap-[10px] sm:gap-4">
+								{
+									tags.map(tag => (
+										<li class="flex gap-1">
+											<tag.icon class="size-5 sm:size-7" />
+										</li>
+									))
+								}
+							</ul>
+						</div>
+					</div>
+
+
+					<div 
+						class="
+						flex justify-center gap-3 mt-1
+						">
+							<ProjectOption href="#">
+									<EyeIcon class="size-4 sm:size-5" />
+									Preview
+							</ProjectOption>
+							<ProjectOption href="#">
+									<SourceCodeIcon class="size-4 sm:size-5" />
+									Code
+							</ProjectOption>
+						</div>
+				</article>
+			))
+		}
+		<div class=" self-end">
+			<MoreInfoButton href="/projects">
+				More Projects
+			</MoreInfoButton>
+			
+		</div>
+	</section>
+</div>

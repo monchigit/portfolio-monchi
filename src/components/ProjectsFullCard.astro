@@ -1,0 +1,120 @@
+---
+import { PROJECTS } from '@service/projectsInfoFull.js';
+import ProjectOption from '@components/ProjectOption.astro';
+import SourceCodeIcon from '@icons/SourceCode.astro';
+import EyeIcon from '@icons/Eye.astro';
+---
+
+<div
+		id="projectmain"	
+		class="
+		span-2
+		px-[28px] pt-6 pb-8  
+		rounded-lg
+		bg-[#040404]
+		flex flex-col gap-5
+		xl:w-[100%] lg:pb-12
+		"
+		>
+		<h2 class="
+			flex flex-col justify-center
+			text-2xl font-bold pt-4
+			lg:mb-4 xl:mb-6 xl:px-8 xl:text-3xl
+			">
+			<span><span class="text-[var(--brand-color)] inline">P</span>rojects</span>
+		</h2>
+		<section 
+			id="section-projects"
+			class="
+			flex flex-col gap-4
+			w-[100%]
+			xl:flex-row xl:gap-x-8 xl:gap-y-8 xl:justify-evenly xl:flex-wrap lg:items-
+			2xl:gap-12
+			">
+			{
+				PROJECTS.map(({ title, tags, description, image }) => (
+					<article class="
+						flex flex-col gap-5 py-4 px-4 items-center
+						bg-[#040404]
+						justify-evenly
+						rounded-md
+						shadow-md shadow-black
+						lg:max-xl:max-w-[380px] 
+						xl:max-w-[400px]
+						">
+						<div class="
+							flex flex-col gap-4 items-center
+							sm:gap-6 sm:px-6
+							">
+							<a href="#"
+								class="
+								flex flex-col justify-center">
+								<img src={image} alt="Hit The Light"
+								 class="
+								 w-48 h-32
+								 rounded-md
+								 shadow-md shadow-black
+								 sm:w-72 sm:h-48
+								 ">
+							</a>
+							<div 
+								class="flex flex-col gap-4 justify-center items-start py-1 px-1
+								sm:gap-5
+								">
+								<h3 
+									class="
+									text-lg font-bold 
+									self-center
+									sm:text-2xl
+									">
+									{title}
+								</h3>
+								<div class="text-gray-300/60 text-start sm:text-xl">
+									{description}
+								</div>
+								<ul class="flex flex-wrap gap-[10px] text-sm sm:gap-4">
+									{
+										tags.map(tag => (
+											<li class="flex gap-1">
+												<tag.icon class="size-5 sm:size-7" />
+											</li>
+										))
+									}
+								</ul>
+							</div>
+						</div>
+
+
+						<div class="flex justify-center gap-3 text-sm mt-4">
+								<ProjectOption href="#">
+										<EyeIcon class="size-4 sm:size-5" />
+										Preview
+								</ProjectOption>
+								<ProjectOption href="#">
+										<SourceCodeIcon class="size-4 sm:size-5" />
+										Code
+								</ProjectOption>
+							</div>
+					</article>
+				))
+			}
+		</section>
+	</div>
+<style>
+	@media (min-width: 1800px) {
+		#section-projects {
+			display: grid;
+			grid-template-columns: repeat(3,minmax(0,1fr));
+			grid-gap: 45px;
+			padding-left: 35px;
+		}
+	}
+	@media (min-width: 2050px) {
+		#section-projects {
+			display: grid;
+			grid-template-columns: repeat(4,minmax(0,1fr));
+			grid-gap: 45px;
+			
+		}
+	}
+</style>
